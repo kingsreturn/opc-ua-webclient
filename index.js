@@ -8,7 +8,7 @@ const{
     TimestampsToReturn,
 } = require("node-opcua");
 
-const endPointUrl = "opc.tcp://JY3EE70L1W3SVF4:48010";
+const endPointUrl = "opc.tcp://localhost:48010";
 const NodeIdToMonitor = "ns=2;s=Demo.Dynamic.Scalar.Float";
 
 (async() => {
