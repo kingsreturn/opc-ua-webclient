@@ -67,6 +67,7 @@ ns=2;s=Demo.Dynamic.Scalar.Double
     const socket = io.connect('http://localhost:3100');
 
     socket.on('message',function(data){
+        console.log(data.value);
         document.getElementById("metric").innerHTML = data.value;
         document.getElementById('online-badge').style.display = 'inline';
         document.getElementById('offline-badge').style.display = 'none';

@@ -4,15 +4,12 @@ const port = 3100;
 
 const{
     AttributeIds,
-    OpcuaClient,
-    TimestampsToReturn,
     OPCUAClient,
-    Subscription,
-    DataValue
+    TimestampsToReturn,
 } = require("node-opcua");
 
-const endPointUrl = "opc.tcp://localhost:48010";
-const NodeIdToMonitor = "ns=2,s=Demo.Dynamic.Scalar.Float";
+const endPointUrl = "opc.tcp://JY3EE70L1W3SVF4:48010";
+const NodeIdToMonitor = "ns=2;s=Demo.Dynamic.Scalar.Float";
 
 (async() => {
     try{
@@ -64,7 +61,7 @@ const NodeIdToMonitor = "ns=2,s=Demo.Dynamic.Scalar.Float";
     console.log("Visiting http://localhost:" + port);
 
     const itemToMonitor = {
-        nodeID: NodeIdToMonitor,
+        nodeId: NodeIdToMonitor,
         attributeId: AttributeIds.Value
     };
 
@@ -76,12 +73,12 @@ const NodeIdToMonitor = "ns=2,s=Demo.Dynamic.Scalar.Float";
 
     const monitoredItem = await subscription.monitor(itemToMonitor,parameters,TimestampsToReturn.Both);
 
-    monitoredItem.on("changed",(dataValue) =>{
+    monitoredItem.on("changed",(dataValue) => {
         console.log(dataValue.value.toString());
         io.sockets.emit('message',{
             value: dataValue.value.value,
             timestamp: dataValue.serverTimestamp,
-            nodeID: NodeIdToMonitor,
+            nodeId: NodeIdToMonitor,
             browserName:"Temperature"
         });
     });
