@@ -1,0 +1,24 @@
+{
+  "name": "opc-ua-webclient",
+  "version": "1.0.0",
+  "description": "opc-ua webclient created by nodeJS using express Module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingsreturn/opc-ua-webclient.git"
+  },
+  "keywords": [
+    "opc-ua",
+    "node",
+    "webclient"
+  ],
+  "author": "feng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kingsreturn/opc-ua-webclient/issues"
+  },
+  "homepage": "https://github.com/kingsreturn/opc-ua-webclient#readme"
+}
