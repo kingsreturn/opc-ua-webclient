@@ -38,18 +38,18 @@ const NodeIdToMonitor = "ns=2;s=Demo.Dynamic.Scalar.Float";
         subscription.on("keepalive",function(){
             console.log("keep alive");           
         }).on("terminated",function(){
-            console.log("TERMINATED ----------------------------")
+            console.log("TERMINATED ---------------------------- >>")
         });
         
     const app = express();
-    app.set('view engine', 'html');
+    //app.set('view engine', 'html');
     app.use(express.static(__dirname + '/'));
-    app.set("views",__dirname + '/');
+    //app.set("views",__dirname + '/');
     app.get('/', function(req, res) {
         res.render('index.html')
     })
 
-    app.use(express.static(__dirname + '/'));
+    //app.use(express.static(__dirname + '/'));
 
     //app.listen(3100);
 
