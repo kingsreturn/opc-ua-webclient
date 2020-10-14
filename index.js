@@ -8,8 +8,8 @@ const{
     TimestampsToReturn,
 } = require("node-opcua");
 
-const endPointUrl = "opc.tcp://localhost:48010";
-const NodeIdToMonitor = "ns=2;s=Demo.Dynamic.Scalar.Float";
+const endPointUrl = "opc.tcp://localhost:8888";
+const NodeIdToMonitor = "ns=1;b=1020FFAA";
 
 (async() => {
     try{
@@ -43,9 +43,9 @@ const NodeIdToMonitor = "ns=2;s=Demo.Dynamic.Scalar.Float";
         
     const app = express();
     //app.set('view engine', 'html');
-    app.use(express.static(__dirname + '/'));
+    app.use(express.static(__dirname + '/webserver/'));
     //app.set("views",__dirname + '/');
-    app.get('/', function(req, res) {
+    app.get('/webserver/', function(req, res) {
         res.render('index.html')
     })
 

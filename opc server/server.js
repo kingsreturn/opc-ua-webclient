@@ -1,14 +1,8 @@
 const { BuildInfo } = require("node-opcua");
 const opcua = require("node-opcua");//use node opcua module;
-/*
-BuildInfo : {
-    productName: "MyServer",
-    buildNumber: "7658",
-    buildDate: new Date(2020,10,14)
-}*/
 
 const server = new opcua.OPCUAServer({
-    port:4344,// the opc ua server port number
+    port:8888,// the opc ua server port number
     resourcePath:"/my_data_server/number",
     //setting server info
     buildInfo : {
@@ -32,8 +26,8 @@ function post_initialize(){
             browseName : "MyDevice"
         });
     
-        // add some variables
-        // add a variable named MyVariable1 to the newly created folder "MyDevice"
+    // add some variables
+    // add a variable named MyVariable1 to the newly created folder "MyDevice"
     let variable1 = 1;
 
     // emulate variable1 changing every 500 ms
