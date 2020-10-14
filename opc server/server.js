@@ -29,7 +29,7 @@ function post_initialize(){
         // declare a new object
         const device = namespace.addObject({
             organizedBy: addressSpace.rootFolder.objects,
-            browserName : "MyDevice"
+            browseName : "MyDevice"
         });
     
         // add some variables
@@ -75,7 +75,10 @@ function post_initialize(){
     });
 
     const os = require("os");
-
+    /**
+     * returns the percentage of free memory on the running machine
+     * @return {double}
+     */
     function available_memory() {
         // var value = process.memoryUsage().heapUsed / 1000000;
         const percentageMemUsed = os.freemem() / os.totalmem() * 100.0;
@@ -104,6 +107,7 @@ function post_initialize(){
         console.log(" the primary server endpoint url is ", endpointUrl );
     });
 }
+
 server.initialize(post_initialize);
 
 
