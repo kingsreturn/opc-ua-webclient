@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/kingsreturn/opc-ua-webclient#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "node-opcua": "^2.8.1",
     "socket.io": "^2.3.0",
     "unirest": "^0.6.0"
